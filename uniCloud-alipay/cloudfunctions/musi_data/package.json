@@ -1,0 +1,7 @@
+{
+  "name": "musi_data",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

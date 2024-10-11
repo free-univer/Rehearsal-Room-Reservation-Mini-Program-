@@ -1,0 +1,7 @@
+{
+  "name": "rowAll",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
