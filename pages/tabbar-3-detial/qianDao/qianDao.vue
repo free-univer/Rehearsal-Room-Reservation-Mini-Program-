@@ -23,18 +23,18 @@
 </template>
 <script>
 	let id;
+	let detail;
 	export default {
 		data() {
 			return {
 				imageValue:[],
-				filesUrl:[],
-				//formValue:{
-					
-				//}
+				formValue:{
+					filesUrl:[]
+				}
 			}
 		},
 		onLoad(e){
-			console.log(e)
+			//console.log(e)
 			id=e.id;
 			this.getDetail()
 		},
@@ -46,9 +46,9 @@
 						id
 					}
 				}).then(res=>{
-					console.log(res.result.data[0])
-					//this.formValue=res.result.data[0]
-					//cosole.log("id"+this.formValue)
+					//console.log(res.result.data[0])
+					this.formValue=res.result.data[0]
+					//console.log(this.formValue)
 				})
 			},
 			upload(){
@@ -75,12 +75,13 @@
 				  urlpath.push(file.url);
 				}
 				//console.log(urlpath);
-				 this.filesUrl=urlpath;
+				 this.formValue.filesUrl=urlpath;
 				// console.log(this.filesUrl);
 				 uniCloud.callFunction({
-				 	name:"musi_data",
+				 	name:"upLoad",
 				 	data:{
-				 		filesUrl:this.filesUrl,
+						detail:this.formValue
+				 		//filesUrl:this.filesUrl,
 				 	}
 				 }).then(res=>{
 				 	//console.log(res);

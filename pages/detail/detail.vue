@@ -9,8 +9,8 @@
 	  			<text>-----</text>
 	  			<text><uni-dateformat :date="detail.postTime"></uni-dateformat></text>
 	  		</view>
-	  		<view class="content">
-	  			content
+	  		<view class="content" v-if="detail.filesUrl && detail.filesUrl.length">
+	  			<image v-for="item in detail.filesUrl" :src="item" mode="widthFix"></image>
 	  		</view>
 	  		<view class="btnGroup">
 	  			<button size="default" type="primary" @click="goAhead()">签退</button>
@@ -37,7 +37,7 @@
 		methods: {
 		  goAhead(){
 			  uni.navigateTo({
-			  	url:"/pages/tabbar-3-detial/qianDao/qianDao?id"+id
+			  	url:"/pages/tabbar-3-detial/qianDao/qianDao?id="+id
 			  })
 		  },
 		  getDetail(){
@@ -49,7 +49,7 @@
 		     }).then(res=>{
 				// console.log(res)
 				 this.detail=res.result.data[0]
-				// console.log(this.detail)
+				 console.log(this.detail)
 				 this.loadState=true
 			 })
 		  }
@@ -76,6 +76,13 @@
 	}
 	.btnGroup{
 		margin-top: 50rpx;
+	}
+	.content{
+		image{
+			width: 70%;
+			display: block;
+			margin-bottom: 30rpx;
+		}
 	}
 }
 </style>

@@ -42,7 +42,7 @@ export default {
 				name:"getAll",
 				
 			}).then(res=>{
-				console.log(res);
+				//console.log(res);
 				this.listArr=res.result.data
 				uni.stopPullDownRefresh()
 			})
