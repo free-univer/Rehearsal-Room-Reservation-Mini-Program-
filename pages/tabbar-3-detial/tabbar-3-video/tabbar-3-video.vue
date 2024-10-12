@@ -21,13 +21,15 @@
 	export default {
 		data() {
 			return {
-				
-			}
+				time:"",
+				name:""
+			}//使用v-model如果不在return里面定义数据的话，就拿不到数据的值
 		},
 		methods:{
 		  reset(){
 			  
 		  },
+		
 		  onsubmit(e){
 			let detail = e.detail.value
 			console.log(e)
@@ -36,9 +38,10 @@
 				data:{
 				    time:this.time,
 					name:this.name
-				}
+				},
+				
 			}).then(res=>{
-				console.log(res);
+				console.log("上传成功");
 			})
 			uni.switchTab({
 				url: "/pages/tabbar/tabbar-1/tabbar-1"

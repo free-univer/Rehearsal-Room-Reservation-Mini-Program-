@@ -1,5 +1,5 @@
 {
-    "name" : "MC",
+    "name" : "预约排练室",
     "appid" : "__UNI__BB207D7",
     "description" : "",
     "versionName" : "1.0.0",
@@ -38,7 +38,7 @@
     },
     "quickapp" : {},
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxf460c65c7c84de25",
         "setting" : {
             "urlCheck" : true
         },
